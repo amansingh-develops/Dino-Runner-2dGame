@@ -1,0 +1,10 @@
+all: compile link
+
+compile:
+	g++ -Isrc/include -c coding/main.cpp
+
+link:
+	g++ main.o -o main -Lsrc/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 -lsfml-audio
+
+clean:
+	del *.o main.exe
